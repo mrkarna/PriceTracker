@@ -37,14 +37,14 @@ jobs:
           
       - name: Login to Heroku Container registry
         env: 
-          HEROKU_API_KEY: d3188d7b-0b37-49eb-84d6-d4ebf3eba2c7
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         run: heroku container:login
         
       - name: Build and push
         env:
-          HEROKU_API_KEY: d3188d7b-0b37-49eb-84d6-d4ebf3eba2c7
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         run: heroku container:push -a pricetrackerv2 web 
       - name: Release
         env:
-          HEROKU_API_KEY: d3188d7b-0b37-49eb-84d6-d4ebf3eba2c7
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         run: heroku container:release -a pricetrackerv2 web

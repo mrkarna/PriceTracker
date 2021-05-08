@@ -1,26 +1,7 @@
-FROM python:3
+FROM joyzoursky/python-chromedriver:3.7
 COPY . /
 RUN pip install selenium
-EXPOSE 3333
+RUN pip install telegram_send
+# RUN printf "1782618485:AAGk6TxOkq0FyW7YWlpDu5lo3aAnszd_uDM\npub\nt.me/amazPT" | telegram-send --configure-channel
+# EXPOSE 3333
 CMD [ "python", "./main.py"]
-
-
-
-
-# Set the working directory to /app
-WORKDIR /app
-
-# Copy the current directory contents into the container at /app
-COPY . /app
-
-
-# Install any needed packages specified in package.json
-# RUN npm install
-
-# Expose port 3000 for accessing  the app
-EXPOSE 3000
-
-# EXPOSE $PORT
-
-# Run app when the container launches
-CMD ["python",  "main.py"]

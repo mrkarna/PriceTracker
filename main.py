@@ -1,6 +1,6 @@
 from selenium import webdriver
 
-chromeWebDriverPath = '/Users/manish.karna/Downloads/chromedriver'
+chromeWebDriverPath = './chromedriver'
 priceXPath = '//*[@id=\"priceblock_ourprice\"]'
 
 driver = webdriver.Chrome(chromeWebDriverPath)
